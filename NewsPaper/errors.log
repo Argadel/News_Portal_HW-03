@@ -1,0 +1,40 @@
+2024-08-21 18:14:03,225 ERROR Internal Server Error: /news/create/ C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\utils\log.py (<class 'AttributeError'>, AttributeError("'NoneType' object has no attribute 'delay'"), <traceback object at 0x000001B0B172B100>)
+Traceback (most recent call last):
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\views\generic\edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\views\generic\edit.py", line 153, in post
+    return self.form_valid(form)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\views\generic\edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\forms\models.py", line 549, in save
+    self._save_m2m()
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\forms\models.py", line 530, in _save_m2m
+    f.save_form_data(self.instance, cleaned_data[f.name])
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\db\models\fields\related.py", line 1966, in save_form_data
+    getattr(instance, self.attname).set(data)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1152, in set
+    self.add(*new_objs, through_defaults=through_defaults)
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1070, in add
+    self._add_items(
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1335, in _add_items
+    signals.m2m_changed.send(
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\axeni\PycharmProjects\Django\News_portal\NewsPaper\news\signals.py", line 33, in notification
+    send_email(instance.preview(), instance.pk, instance.title, subscribers).delay()
+AttributeError: 'NoneType' object has no attribute 'delay'
+2024-08-21 18:14:03,228 ERROR "POST /news/create/ HTTP/1.1" 500 146073 C:\Users\axeni\PycharmProjects\Django\News_portal\venv\lib\site-packages\django\core\servers\basehttp.py None
